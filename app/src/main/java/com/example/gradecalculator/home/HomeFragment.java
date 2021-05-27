@@ -52,7 +52,7 @@ public class HomeFragment extends Fragment {
     }
 
     // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
+    public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
         return fragment;
     }
@@ -60,12 +60,11 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        super.onCreate(savedInstanceState);
         // setContentView(R.layout.activity_main);
-        View view = inflater.inflate(R.layout.activity_main,container,false);
-        lineChart = (LineChart) getView().findViewById(R.id.linechart);
-      //x축
+        View view = inflater.inflate(R.layout.fragment_home,container,false);
+        lineChart = view.findViewById(R.id.linechart);
+
+        //x축
         ArrayList<String> xLabel = new ArrayList<>();
         xLabel.add("1-1"); xLabel.add("1-2");
         xLabel.add("2-1"); xLabel.add("2-2");
@@ -78,15 +77,18 @@ public class HomeFragment extends Fragment {
         xAxis.setTextSize(10f);
         xAxis.setDrawGridLines(true);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(){
-           public String getFormattedValue(float value, AxisBase axis){
-               return xLabel.get((int)value);
-           }
+            public String getFormattedValue(float value, AxisBase axis){
+                return xLabel.get((int)value);
+            }
         });
 
+        return view;
+    }
 
-        return inflater.inflate(R.layout.fragment_home, container, false);
-
-
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        // Inflate the layout for this fragment
+        super.onCreate(savedInstanceState);
     }
 
 
