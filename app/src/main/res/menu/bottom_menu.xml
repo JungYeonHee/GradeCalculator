@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottom_home"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/btn_bottombar_home_unselected"
+        android:title="home" />
+
+    <item
+        android:id="@+id/bottom_management"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/btn_bottombar_management_unselected"
+        android:title="shop"/>
+
+    <item
+        android:id="@+id/bottom_graduation"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/btn_bottombar_graduation_unselected"
+        android:title="contents"/>
+
+    <item
+        android:id="@+id/bottom_mypage"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/btn_bottombar_mypage_unselected"
+        android:title="mypage"/>
+
+</menu>
