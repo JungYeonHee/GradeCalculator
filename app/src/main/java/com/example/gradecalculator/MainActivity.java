@@ -1,12 +1,7 @@
 package com.example.gradecalculator;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -15,6 +10,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import android.view.MenuItem;
+
 import com.example.gradecalculator.graduation.GraduationFragment;
 import com.example.gradecalculator.home.HomeFragment;
 import com.example.gradecalculator.management.ManagementFragment;
@@ -23,10 +25,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
 
-
 public class MainActivity extends AppCompatActivity {
     private TextView tv;
-
     private BottomNavigationView bottomNavigationView; //바텀 네비게이션 뷰
     private FragmentManager fm;
     private FragmentTransaction ft;
@@ -35,11 +35,13 @@ public class MainActivity extends AppCompatActivity {
     private GraduationFragment frag3;
     private MyPageFragment frag4;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       /* tv = findViewById(R.id.tvMain);
+        /*tv = findViewById(R.id.tvMain);
 
         String url = "http://www.google.com";
 
@@ -59,8 +61,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Get a RequestQueue && Add a request (in this example, called stringRequest) to your RequestQueue.
-        MySingleton.getInstance(this).addToRequestQueue(stringRequest);
-*/
+        MySingleton.getInstance(this).addToRequestQueue(stringRequest);*/
+
+
         bottomNavigationView = findViewById(R.id.bottomNavi);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -89,9 +92,8 @@ public class MainActivity extends AppCompatActivity {
         frag3 = new GraduationFragment();
         frag4 = new MyPageFragment();
 
-        setFrag(0); //첫 프래그먼트 화면을 무엇으로 지정해줄 것인지 결정
+        setFrag(0); //첫 프래그먼트 화면을 무엇으로 지정해줄 것인지 결
     }
-
     //프래그먼트 교체가 일어나는 실행문이다.
     private void setFrag(int n) {
         fm = getSupportFragmentManager();
@@ -115,5 +117,4 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
 }
