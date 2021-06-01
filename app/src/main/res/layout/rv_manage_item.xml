@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/rv_manage_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <View
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
+        android:layout_height="0dp"
+        android:layout_width="match_parent">
+    </View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:elevation="1dp">
+    <TextView
+        android:id="@+id/name"
+        tools:text="데이터베이스 설계"
+        android:textColor="@color/black"
+        android:maxLines="1"
+        android:textSize="20dp"
+        android:ellipsize="end"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="124dp"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/kind"
+        tools:text="전공"
+        android:textColor="@color/black"
+        android:maxLines="1"
+        android:textSize="20dp"
+        android:ellipsize="end"
+        android:layout_marginRight="19dp"
+        android:layout_width="38dp"
+        android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/kind_major"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="19dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            tools:text="복수"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/kind_domain"
+            tools:text="0"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:gravity="center_horizontal"
+            android:textSize="20dp"
+            android:ellipsize="end"
+            android:layout_marginRight="19dp"
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/credit"
+            tools:text="3"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:textSize="20dp"
+            android:ellipsize="end"
+            android:layout_marginRight="25dp"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/grade"
+            tools:text="A+"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:textSize="20dp"
+            android:gravity="center_horizontal"
+            android:ellipsize="end"
+            android:layout_marginRight="19dp"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/retake"
+            tools:text="0"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:textSize="20dp"
+            android:ellipsize="end"
+            android:layout_marginRight="19dp"
+            android:layout_width="12dp"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <View
+        android:layout_marginTop="10dp"
+        android:background="#DEDEDE"
+        android:layout_height="1dp"
+        android:layout_width="match_parent">
+
+    </View>
+
+
+</LinearLayout>

@@ -11,6 +11,7 @@
          android:layout_width="match_parent"
          android:layout_height="match_parent"
          android:text="home" />-->
+
     <TextView
         android:id="@+id/gradeTitle"
         android:layout_width="74dp"
@@ -59,13 +60,29 @@
             android:layout_margin="20dp"
             android:layout_marginTop="500dp" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="280dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="100dp"
+        tools:context=".MainActivity">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pie_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_marginTop="500dp"/>
+    </LinearLayout>
+
     <TextView
         android:id="@+id/goalCalculator"
         android:layout_width="135dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginLeft="31dp"
-        android:layout_marginTop="435dp"
+        android:layout_marginTop="535dp"
         android:layout_marginEnd="341dp"
         android:layout_marginRight="341dp"
         android:layout_marginBottom="15dp"
@@ -80,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginLeft="31dp"
-        android:layout_marginTop="470dp"
+        android:layout_marginTop="570dp"
         android:layout_marginEnd="341dp"
         android:layout_marginRight="341dp"
         android:layout_marginBottom="15dp"
@@ -95,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="230dp"
         android:layout_marginLeft="200dp"
-        android:layout_marginTop="470dp"
+        android:layout_marginTop="570dp"
         android:layout_marginEnd="341dp"
         android:layout_marginRight="341dp"
         android:layout_marginBottom="15dp"
@@ -111,7 +128,7 @@
 
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="490dp"
+        android:layout_marginTop="590dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="8dp"
@@ -129,7 +146,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginLeft="31dp"
-        android:layout_marginTop="510dp"
+        android:layout_marginTop="610dp"
         android:layout_marginEnd="341dp"
         android:layout_marginRight="341dp"
         android:layout_marginBottom="15dp"
@@ -144,7 +161,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginLeft="31dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginTop="640dp"
         android:layout_marginEnd="341dp"
         android:layout_marginRight="341dp"
         android:layout_marginBottom="15dp"
@@ -158,7 +175,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="230dp"
         android:layout_marginLeft="200dp"
-        android:layout_marginTop="510dp"
+        android:layout_marginTop="610dp"
         android:layout_marginEnd="341dp"
         android:layout_marginRight="341dp"
         android:layout_marginBottom="15dp"
@@ -172,7 +189,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="230dp"
         android:layout_marginLeft="200dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginTop="640dp"
         android:layout_marginEnd="341dp"
         android:layout_marginRight="341dp"
         android:layout_marginBottom="15dp"
@@ -180,10 +197,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
-
-
-
 
 </FrameLayout>
