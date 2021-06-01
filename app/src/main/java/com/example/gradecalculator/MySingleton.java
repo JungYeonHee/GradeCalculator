@@ -36,7 +36,7 @@ public class MySingleton {
                 });
     }
 
-    public static synchronized MySingleton getInstance(MainActivity context) {
+    public static synchronized MySingleton getInstance(Context context) {
         if (instance == null) {
             instance = new MySingleton(context);
         }

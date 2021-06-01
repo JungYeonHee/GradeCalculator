@@ -41,28 +41,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*tv = findViewById(R.id.tvMain);
-
-        String url = "http://www.google.com";
-
-        // Formulate the request and handle the response.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-
-            new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    tv.setText("Response is: "+ response.substring(0,500));
-                }
-            }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                tv.setText("That didn't work!");
-            }
-        });
-
-        // Get a RequestQueue && Add a request (in this example, called stringRequest) to your RequestQueue.
-        MySingleton.getInstance(this).addToRequestQueue(stringRequest);*/
-
 
         bottomNavigationView = findViewById(R.id.bottomNavi);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -117,4 +95,5 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
 }
