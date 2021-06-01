@@ -10,17 +10,22 @@ import java.util.Map;
 
 public class SignUpRequest extends StringRequest {
         //서버 URL 설정(PHP 파일 연동)
-        final static private String URL = "http://ec2-52-79-221-73.ap-northeast-2.compute.amazonaws.com/SignIn.php";
+        final static private String URL = "http://ec2-52-79-221-73.ap-northeast-2.compute.amazonaws.com/SignUp.php";
         private Map<String, String> map;
+        private Map<String, Integer> map2;
 
-    public SignUpRequest(int userID, String userName, String password, int toeic, String schoolYear, String semester, String mainMajor, String _2ndMajorClass, String _2ndMajor, String thesis, Response.Listener<String> listener){
+
+    public SignUpRequest(int userID, String userName, String password, String entYear, String toeic, String schoolYear, String semester, String mainMajor, String _2ndMajorClass, String _2ndMajor, String thesis, Response.Listener<String> listener){
             super(Request.Method.POST, URL, listener, null);
 
             map = new HashMap<>();
-            map.put("userID", userID + ""); //string 이라고 눈속임
+            //map2 = new HashMap<>();
+
+            map.put("userID", userID+"");
             map.put("userName", userName);
             map.put("password", password);
-            map.put("toeic", toeic + "");
+            map.put("entYear", entYear);
+            map.put("toeic", toeic);
             map.put("schoolYear", schoolYear);
             map.put("semester", semester);
             map.put("mainMajor", mainMajor);
