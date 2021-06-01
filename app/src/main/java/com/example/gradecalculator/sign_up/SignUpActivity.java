@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,16 +13,16 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+
 import com.example.gradecalculator.R;
 import com.example.gradecalculator.sign_in.SignInActivity;
-import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private EditText et_id, et_name, et_pass, et_pass2, et_toeic;
+    private EditText et_id, et_name, et_pass, et_entYear, et_toeic;
     private Button btn_signUp, IDcheck;
     private Spinner sp_schoolYear, sp_semester, sp_mainMajor, sp_2ndMajorClass, sp_2ndMajor, sp_thesis;
 
@@ -33,10 +31,11 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+
         et_id = findViewById(R.id.et_id);
         et_name = findViewById(R.id.et_name);
         et_pass = findViewById(R.id.et_pass);
-        et_pass2 = findViewById(R.id.et_pass2);
+        et_entYear = findViewById(R.id.et_entYear);
         et_toeic = findViewById(R.id.et_toeic);
 //        final TextInputLayout inputLayout = findViewById(R.id.pscheck);
 //        EditText editText = inputLayout.getEditText();
@@ -77,14 +76,15 @@ public class SignUpActivity extends AppCompatActivity {
                 int userID = Integer.parseInt(et_id.getText().toString());
                 String userName = et_name.getText().toString();
                 String password = et_pass.getText().toString();
-                String password2 = et_pass2.getText().toString();
-                int toeic = Integer.parseInt(et_toeic.getText().toString());
+                String entYear = et_entYear.getText().toString();
+                String toeic = et_toeic.getText().toString();
                 String schoolYear = sp_schoolYear.getSelectedItem().toString();
                 String semester = sp_semester.getSelectedItem().toString();
                 String mainMajor = sp_mainMajor.getSelectedItem().toString();
                 String _2ndMajorClass = sp_2ndMajorClass.getSelectedItem().toString();
                 String _2ndMajor = sp_2ndMajor.getSelectedItem().toString();
                 String thesis = sp_thesis.getSelectedItem().toString();
+
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -108,7 +108,7 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                 };
                 //서버로 Volley를 이용해서 요청을 함.
-                SignUpRequest registerRequest = new SignUpRequest(userID, userName, password, toeic, schoolYear, semester, mainMajor, _2ndMajorClass, _2ndMajor, thesis, responseListener);
+                SignUpRequest registerRequest = new SignUpRequest(userID, userName, password, entYear, toeic, schoolYear, semester, mainMajor, _2ndMajorClass, _2ndMajor, thesis, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(SignUpActivity.this);
                 queue.add(registerRequest);
 

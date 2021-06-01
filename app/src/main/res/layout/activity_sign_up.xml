@@ -94,13 +94,13 @@
         app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
     <EditText
-        android:id="@+id/et_pass2"
+        android:id="@+id/et_entYear"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="4dp"
         android:ems="10"
-        android:hint="비밀번호 재확인"
+        android:hint="입학 연도"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/sp_schoolYear"
         app:layout_constraintEnd_toEndOf="@+id/et_pass"
@@ -170,7 +170,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_2ndMajorClass"
         app:layout_constraintEnd_toStartOf="@+id/sp_schoolYear"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_pass2" />
+        app:layout_constraintTop_toBottomOf="@+id/et_entYear" />
 
     <TextView
         android:id="@+id/tv_2ndMajorClass"
@@ -184,13 +184,13 @@
         android:text="복부전 여부"
         android:textColor="#040202"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_mainMajor"
+        app:layout_constraintBottom_toTopOf="@+id/tv_mainMajorTitle"
         app:layout_constraintEnd_toStartOf="@+id/sp_2ndMajorClass"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_Academic" />
 
     <TextView
-        android:id="@+id/tv_mainMajor"
+        android:id="@+id/tv_mainMajorTitle"
         android:layout_width="48dp"
         android:layout_height="26dp"
         android:layout_marginStart="32dp"
@@ -221,7 +221,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_toeic"
         app:layout_constraintEnd_toStartOf="@+id/sp_2ndMajor"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_mainMajor" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_mainMajorTitle" />
 
     <TextView
         android:id="@+id/tv_toeic"
@@ -272,7 +272,7 @@
         app:layout_constraintBottom_toTopOf="@+id/sp_2ndMajorClass"
         app:layout_constraintEnd_toStartOf="@+id/sp_semester"
         app:layout_constraintStart_toEndOf="@+id/tv_Academic"
-        app:layout_constraintTop_toBottomOf="@+id/et_pass2" />
+        app:layout_constraintTop_toBottomOf="@+id/et_entYear" />
 
     <Spinner
         android:id="@+id/sp_semester"
@@ -284,7 +284,7 @@
         android:entries="@array/semester"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sp_schoolYear"
-        app:layout_constraintTop_toBottomOf="@+id/et_pass2" />
+        app:layout_constraintTop_toBottomOf="@+id/et_entYear" />
 
     <Spinner
         android:id="@+id/sp_mainMajor"
@@ -296,7 +296,7 @@
         android:layout_marginBottom="4dp"
         android:entries="@array/major"
         app:layout_constraintBottom_toTopOf="@+id/sp_2ndMajor"
-        app:layout_constraintStart_toEndOf="@+id/tv_mainMajor"
+        app:layout_constraintStart_toEndOf="@+id/tv_mainMajorTitle"
         app:layout_constraintTop_toBottomOf="@+id/sp_2ndMajorClass" />
 
     <Spinner
