@@ -15,19 +15,19 @@ public class SignUpRequest extends StringRequest {
         private Map<String, Integer> map2;
 
 
-    public SignUpRequest(int userID, String userName, String password, String entYear, String toeic, String schoolYear, String semester, String mainMajor, String _2ndMajorClass, String _2ndMajor, String thesis, Response.Listener<String> listener){
+    public SignUpRequest(int userID, String userName, String password, int entYear, int toeic, int schoolYear, int semester, String mainMajor, String _2ndMajorClass, String _2ndMajor, String thesis, Response.Listener<String> listener){
             super(Request.Method.POST, URL, listener, null);
 
             map = new HashMap<>();
-            //map2 = new HashMap<>();
+            map2 = new HashMap<>();
 
-            map.put("userID", userID+"");
+            map2.put("userID", userID);
             map.put("userName", userName);
             map.put("password", password);
-            map.put("entYear", entYear);
-            map.put("toeic", toeic);
-            map.put("schoolYear", schoolYear);
-            map.put("semester", semester);
+            map2.put("entYear", entYear);
+            map2.put("toeic", toeic);
+            map2.put("schoolYear", schoolYear);
+            map2.put("semester", semester);
             map.put("mainMajor", mainMajor);
             map.put("_2ndMajorClass", _2ndMajorClass);
             map.put("_2ndMajor", _2ndMajor);

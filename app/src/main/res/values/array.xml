@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="schoolYear">
-        <item>1학년</item>
-        <item>2학년</item>
-        <item>3학년</item>
-        <item>4학년</item>
-        <item>5학년</item>
-        <item>6학년</item>
-    </string-array>
+    <integer-array name="schoolYear">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </integer-array>
     
-    <string-array name="semester">
-        <item>1학기</item>
-        <item>2학기</item>
-    </string-array>
+    <integer-array name="semester">
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
 
     <string-array name="_2ndMajorClass">
         <item>심화전공</item>
