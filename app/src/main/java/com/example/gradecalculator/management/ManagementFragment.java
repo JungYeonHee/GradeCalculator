@@ -1,17 +1,13 @@
 package com.example.gradecalculator.management;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,15 +21,14 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.example.gradecalculator.MainActivity;
 import com.example.gradecalculator.MySingleton;
 import com.example.gradecalculator.R;
+import com.example.gradecalculator.SharedPreferenceUtil;
 import com.google.android.material.tabs.TabLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONStringer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,14 +41,14 @@ public class ManagementFragment extends Fragment {
     ManageRvAdapter manageRvAdapter; // recycle view adapter
     RecyclerView recylce_Recylcerview; // recycle view
 
-    ArrayList<ManageClass> totalManageClasses1_1;
-    ArrayList<ManageClass> totalManageClasses1_2;
-    ArrayList<ManageClass> totalManageClasses2_1;
-    ArrayList<ManageClass> totalManageClasses2_2;
-    ArrayList<ManageClass> totalManageClasses3_1;
-    ArrayList<ManageClass> totalManageClasses3_2;
-    ArrayList<ManageClass> totalManageClasses4_1;
-    ArrayList<ManageClass> totalManageClasses4_2;
+    ArrayList<ManageData> totalManageClasses1_1;
+    ArrayList<ManageData> totalManageClasses1_2;
+    ArrayList<ManageData> totalManageClasses2_1;
+    ArrayList<ManageData> totalManageClasses2_2;
+    ArrayList<ManageData> totalManageClasses3_1;
+    ArrayList<ManageData> totalManageClasses3_2;
+    ArrayList<ManageData> totalManageClasses4_1;
+    ArrayList<ManageData> totalManageClasses4_2;
 
     Button btn_add;
 
@@ -87,28 +82,28 @@ public class ManagementFragment extends Fragment {
 
 
         totalManageClasses1_1 = new ArrayList<>();
-        totalManageClasses1_1 = selectClass(context, "20181046", "1", "1", totalManageClasses1_1);
+        totalManageClasses1_1 = selectClass(context, SharedPreferenceUtil.getSharedPreference(context, "userID"), "1", "1", totalManageClasses1_1);
 
         totalManageClasses1_2 = new ArrayList<>();
-        totalManageClasses1_2 = selectClass(context, "20181046", "1", "2", totalManageClasses1_2);
+        totalManageClasses1_2 = selectClass(context, SharedPreferenceUtil.getSharedPreference(context, "userID"), "1", "2", totalManageClasses1_2);
 
         totalManageClasses2_1 = new ArrayList<>();
-        totalManageClasses2_1 = selectClass(context, "20181046", "2", "1", totalManageClasses2_1);
+        totalManageClasses2_1 = selectClass(context, SharedPreferenceUtil.getSharedPreference(context, "userID"), "2", "1", totalManageClasses2_1);
 
         totalManageClasses2_2 = new ArrayList<>();
-        totalManageClasses2_2 = selectClass(context, "20181046", "2", "2", totalManageClasses2_2);
+        totalManageClasses2_2 = selectClass(context, SharedPreferenceUtil.getSharedPreference(context, "userID"), "2", "2", totalManageClasses2_2);
 
         totalManageClasses3_1 = new ArrayList<>();
-        totalManageClasses3_1 = selectClass(context, "20181046", "3", "1", totalManageClasses3_1);
+        totalManageClasses3_1 = selectClass(context, SharedPreferenceUtil.getSharedPreference(context, "userID"), "3", "1", totalManageClasses3_1);
 
         totalManageClasses3_2 = new ArrayList<>();
-        totalManageClasses3_2 = selectClass(context, "20181046", "3", "2", totalManageClasses3_2);
+        totalManageClasses3_2 = selectClass(context, SharedPreferenceUtil.getSharedPreference(context, "userID"), "3", "2", totalManageClasses3_2);
 
         totalManageClasses4_1 = new ArrayList<>();
-        totalManageClasses4_1 = selectClass(context, "20181046", "4", "1", totalManageClasses4_1);
+        totalManageClasses4_1 = selectClass(context, SharedPreferenceUtil.getSharedPreference(context, "userID"), "4", "1", totalManageClasses4_1);
 
         totalManageClasses4_2 = new ArrayList<>();
-        totalManageClasses4_2 = selectClass(context, "20181046", "4", "2", totalManageClasses4_2);
+        totalManageClasses4_2 = selectClass(context, SharedPreferenceUtil.getSharedPreference(context, "userID"), "4", "2", totalManageClasses4_2);
 
         recylce_Recylcerview = view.findViewById(R.id.rv_manage);
         recylce_Recylcerview.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -124,8 +119,8 @@ public class ManagementFragment extends Fragment {
         editor.putString("tabSemester", "1");
         editor.commit();
 
-        gpa(context,"20181046", "1", "1");
-        gpaMajor(context,"20181046", "1", "1");
+        gpa(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "1", "1");
+        gpaMajor(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "1", "1");
 
         tabLayout = view.findViewById(R.id.tab_layout_management);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -137,8 +132,8 @@ public class ManagementFragment extends Fragment {
                         editor.putString("tabSemester", "1");
                         editor.commit();
 
-                        gpa(context,"20181046", "1", "1");
-                        gpaMajor(context,"20181046", "1", "1");
+                        gpa(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "1", "1");
+                        gpaMajor(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "1", "1");
 
                         recylce_Recylcerview.setAdapter(new ManageRvAdapter(totalManageClasses1_1));
                         break;
@@ -147,8 +142,8 @@ public class ManagementFragment extends Fragment {
                         editor.putString("tabSemester", "2");
                         editor.commit();
 
-                        gpa(context,"20181046", "1", "2");
-                        gpaMajor(context,"20181046", "1", "2");
+                        gpa(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "1", "2");
+                        gpaMajor(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "1", "2");
 
                         recylce_Recylcerview.setAdapter(new ManageRvAdapter(totalManageClasses1_2));
                         break;
@@ -157,8 +152,8 @@ public class ManagementFragment extends Fragment {
                         editor.putString("tabSemester", "1");
                         editor.commit();
 
-                        gpa(context,"20181046", "2", "1");
-                        gpaMajor(context,"20181046", "2", "1");
+                        gpa(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "2", "1");
+                        gpaMajor(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "2", "1");
 
                         recylce_Recylcerview.setAdapter(new ManageRvAdapter(totalManageClasses2_1));
                         break;
@@ -167,8 +162,8 @@ public class ManagementFragment extends Fragment {
                         editor.putString("tabSemester", "2");
                         editor.commit();
 
-                        gpa(context,"20181046", "2", "2");
-                        gpaMajor(context,"20181046", "2", "2");
+                        gpa(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "2", "2");
+                        gpaMajor(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "2", "2");
 
                         recylce_Recylcerview.setAdapter(new ManageRvAdapter(totalManageClasses2_2));
                         break;
@@ -177,8 +172,8 @@ public class ManagementFragment extends Fragment {
                         editor.putString("tabSemester", "1");
                         editor.commit();
 
-                        gpa(context,"20181046", "3", "1");
-                        gpaMajor(context,"20181046", "3", "1");
+                        gpa(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "3", "1");
+                        gpaMajor(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "3", "1");
 
                         recylce_Recylcerview.setAdapter(new ManageRvAdapter(totalManageClasses3_1));
                         break;
@@ -187,8 +182,8 @@ public class ManagementFragment extends Fragment {
                         editor.putString("tabSemester", "2");
                         editor.commit();
 
-                        gpa(context,"20181046", "3", "2");
-                        gpaMajor(context,"20181046", "3", "2");
+                        gpa(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "3", "2");
+                        gpaMajor(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "3", "2");
 
                         recylce_Recylcerview.setAdapter(new ManageRvAdapter(totalManageClasses3_2));
                         break;
@@ -197,8 +192,8 @@ public class ManagementFragment extends Fragment {
                         editor.putString("tabSemester", "1");
                         editor.commit();
 
-                        gpa(context,"20181046", "4", "1");
-                        gpaMajor(context,"20181046", "4", "1");
+                        gpa(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "4", "1");
+                        gpaMajor(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "4", "1");
 
                         recylce_Recylcerview.setAdapter(new ManageRvAdapter(totalManageClasses4_1));
                         break;
@@ -207,8 +202,8 @@ public class ManagementFragment extends Fragment {
                         editor.putString("tabSemester", "2");
                         editor.commit();
 
-                        gpa(context,"20181046", "4", "2");
-                        gpaMajor(context,"20181046", "4", "2");
+                        gpa(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "4", "2");
+                        gpaMajor(context,SharedPreferenceUtil.getSharedPreference(context, "userID"), "4", "2");
 
                         recylce_Recylcerview.setAdapter(new ManageRvAdapter(totalManageClasses4_2));
                         break;
@@ -239,7 +234,7 @@ public class ManagementFragment extends Fragment {
         return view;
     }
 
-    public ArrayList<ManageClass> selectClass(Context context, String id, String year, String semester, ArrayList<ManageClass> mngClass){
+    public ArrayList<ManageData> selectClass(Context context, String id, String year, String semester, ArrayList<ManageData> mngClass){
         HashMap<String, ArrayList> selectMap = new HashMap<String, ArrayList>();
         ArrayList<String> selectList = new ArrayList<String>();
 
@@ -291,7 +286,7 @@ public class ManagementFragment extends Fragment {
 
 
                                 Log.d("abcd",grade);
-                                mngClass.add(new ManageClass(name, kind, kind_major, kind_domain, credit, grade, retake));
+                                mngClass.add(new ManageData(name, kind, kind_major, kind_domain, credit, grade, retake));
                                 manageRvAdapter.notifyDataSetChanged();
                             }
 

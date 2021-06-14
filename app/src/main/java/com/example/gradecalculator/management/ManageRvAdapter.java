@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gradecalculator.R;
@@ -14,9 +13,9 @@ import java.util.ArrayList;
 
 public class ManageRvAdapter extends RecyclerView.Adapter<Management_ViewHolder> {
 
-    private ArrayList<ManageClass> manageClasses;
+    private ArrayList<ManageData> manageClasses;
 
-    public ManageRvAdapter(ArrayList<ManageClass> manageClasses) {
+    public ManageRvAdapter(ArrayList<ManageData> manageClasses) {
         this.manageClasses = manageClasses;
     }
 
@@ -34,7 +33,7 @@ public class ManageRvAdapter extends RecyclerView.Adapter<Management_ViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull Management_ViewHolder holder, int position) {
-        ManageClass aManageClass = manageClasses.get(position);
+        ManageData aManageClass = manageClasses.get(position);
 
         holder.name.setText(aManageClass.getName());
         holder.kind.setText(aManageClass.getKind());

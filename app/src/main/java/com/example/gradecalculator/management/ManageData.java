@@ -2,7 +2,7 @@ package com.example.gradecalculator.management;
 
 import java.util.ArrayList;
 
-public class ManageClass {
+public class ManageData {
 
     private String name; //과목명
     private String kind; //전공/교양
@@ -13,7 +13,7 @@ public class ManageClass {
     private String retake;//재수강
 
 
-    public ManageClass(String name, String kind, String kind_major, String kind_domain, String credit, String grade, String retake) {
+    public ManageData(String name, String kind, String kind_major, String kind_domain, String credit, String grade, String retake) {
         this.name = name;
         this.kind = kind;
         this.kind_major = kind_major;

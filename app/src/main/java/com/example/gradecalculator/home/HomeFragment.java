@@ -1,20 +1,29 @@
 package com.example.gradecalculator.home;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.example.gradecalculator.MySingleton;
 import com.example.gradecalculator.R;
+import com.example.gradecalculator.SharedPreferenceUtil;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.LegendEntry;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -29,13 +38,17 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeFragment extends Fragment {
 
     private LineChart lineChart;
     private PieChart pieChart;
+    Context context;
 
 
     private ArrayList<ILineDataSet> DataSets = new ArrayList<>();
@@ -60,13 +73,10 @@ public class HomeFragment extends Fragment {
         lineChart.moveViewToX(data.getEntryCount());
     }
 
-    // TODO: Rename parameter arguments, choose names that match
-
     public HomeFragment() {
         // Required empty public constructor
     }
 
-    // TODO: Rename and change types and number of parameters
     public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
         return fragment;
@@ -79,6 +89,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         lineChart = view.findViewById(R.id.linechart);
         pieChart = view.findViewById(R.id.pie_chart);
+        context = getActivity().getApplicationContext();
 
         //x축
         ArrayList<String> xLabel = new ArrayList<>();
@@ -102,8 +113,9 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        setupPieChart();
-        loadPieChartData();
+
+        // 파이차트
+        setupPieChartData(context, SharedPreferenceUtil.getSharedPreference(context, "userID")); // 파이 차트 데이터
 
         return view;
     }
@@ -114,21 +126,23 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    public void setupPieChart() {
+    public void setupPieChart(int sum) {
         pieChart.setDrawHoleEnabled(true);
         pieChart.setUsePercentValues(true);
         pieChart.setEntryLabelTextSize(18);
         pieChart.setEntryLabelColor(Color.BLACK);
         pieChart.setCenterTextSize(12);
-        //pieChart.setHoleRadius(40);
         pieChart.getDescription().setEnabled(false);
-        pieChart.setCenterText("성적분포");
+
+        if(sum != 0){
+            pieChart.setCenterText("성적분포");
+        }else{
+            pieChart.setCenterText("등록된 성적이 없습니다.");
+        }
+
         pieChart.setDrawSliceText(false);
 
         Legend l = pieChart.getLegend();
-        //l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
-        //l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
-        //l.setOrientation(Legend.LegendOrientation.VERTICAL);
 
         ArrayList<String> labels = new ArrayList<String>();
         labels.add("A");
@@ -141,14 +155,22 @@ public class HomeFragment extends Fragment {
         l.setEnabled(true);
     }
 
-    private void loadPieChartData() {
+    private int loadPieChartData(ArrayList<Integer> list) {
+
+
         ArrayList<PieEntry> entries = new ArrayList<>();
 
-        entries.add(new PieEntry(20f, "A"));
-        entries.add(new PieEntry(20f, "B"));
-        entries.add(new PieEntry(20f, "C"));
-        entries.add(new PieEntry(20f, "D"));
-        entries.add(new PieEntry(20f, "F"));
+        String[] grade = {"A", "B", "C", "D", "F"};
+        int sum = 0;
+
+        for(int i = 0; i < list.size(); i++){
+            if(list.get(i) != 0){
+                entries.add(new PieEntry(Float.parseFloat(Integer.toString(list.get(i))), grade[i]));
+                sum++;
+            }
+        }
+
+        setupPieChart(sum);
 
         // add a lot of colors
         ArrayList<Integer> colors = new ArrayList<>();
@@ -158,15 +180,6 @@ public class HomeFragment extends Fragment {
         for (int color : ColorTemplate.LIBERTY_COLORS) { colors.add(color); }
         for (int color : ColorTemplate.PASTEL_COLORS) { colors.add(color); }
         colors.add(ColorTemplate.getHoloBlue());
-
-
-        int[] zoneColors = {
-                Color.rgb(164, 164, 164),
-                Color.rgb(54, 155, 227),
-                Color.rgb(42, 160, 84),
-                Color.rgb(242, 171, 21),
-                Color.rgb(217, 41, 61)
-        };
 
         PieDataSet dataSet = new PieDataSet(entries, "");
         dataSet.setColors(colors);
@@ -184,5 +197,71 @@ public class HomeFragment extends Fragment {
         pieChart.invalidate();
 
         pieChart.animateY(1400, Easing.EaseInOutQuad);
+
+        return sum;
+    }
+
+    public ArrayList<Integer> setupPieChartData(Context context, String id){
+        final int[] cnt_a = {0};
+        final int[] cnt_b = {0};
+        final int[] cnt_c = {0};
+        final int[] cnt_d = {0};
+        final int[] cnt_f = {0};
+
+        ArrayList<Integer> selectList = new ArrayList<Integer>();
+
+        String url = "http://ec2-52-79-221-73.ap-northeast-2.compute.amazonaws.com/gradeRatio.php?userID="+id;
+
+        // Formulate the request and handle the response.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        String strResp = response;
+
+                        try {
+                            JSONArray jsonArray = new JSONArray(strResp);
+                            for(int i=0; i<jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                String grade = jsonObject.getString("grade");
+                                String totalGrade = jsonObject.getString("total");
+
+                                if(grade.equals("A ") || grade.equals("A-") || grade.equals("A0")){
+                                    cnt_a[0] += Integer.parseInt(totalGrade);
+                                    //Log.d("za",  Integer.toString(cnt_a[0]));
+                                }else if(grade.equals("B ") || grade.equals("B-") || grade.equals("B0")){
+                                    cnt_b[0] += Integer.parseInt(totalGrade);
+                                }else if(grade.equals("C ") || grade.equals("C-") || grade.equals("C0")){
+                                    cnt_c[0] += Integer.parseInt(totalGrade);
+                                }else if(grade.equals("D ") || grade.equals("D-") || grade.equals("D0")){
+                                    cnt_d[0] += Integer.parseInt(totalGrade);
+                                }else{
+                                    cnt_f[0] += Integer.parseInt(totalGrade);
+                                }
+                            }
+                            selectList.add(cnt_a[0]);
+                            selectList.add(cnt_b[0]);
+                            selectList.add(cnt_c[0]);
+                            selectList.add(cnt_d[0]);
+                            selectList.add(cnt_f[0]);
+
+                            // 파이차트 데이터 불러오기
+                            loadPieChartData(selectList);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(context, "등급 비율 조회 실패", Toast.LENGTH_SHORT).show();
+            }
+        }){
+        };
+        MySingleton.getInstance(context).addToRequestQueue(stringRequest);
+
+        return selectList;
     }
 }
