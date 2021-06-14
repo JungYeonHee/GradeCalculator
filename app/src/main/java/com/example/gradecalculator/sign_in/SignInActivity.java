@@ -12,7 +12,9 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.gradecalculator.MainActivity;
 import com.example.gradecalculator.R;
+import com.example.gradecalculator.SharedPreferenceUtil;
 import com.example.gradecalculator.home.HomeFragment;
 import com.example.gradecalculator.sign_up.SignUpActivity;
 
@@ -57,9 +59,30 @@ public class SignInActivity extends AppCompatActivity {
                             if (success) { //로그인에 성공한 경우
                                 String userID = jsonObject.getString("userID");
                                 String password = jsonObject.getString("password");
+                                String userName = jsonObject.getString("userName");
+                                String toeic = jsonObject.getString("toeic");
+                                String schoolYear = jsonObject.getString("schoolYear");
+                                String semester = jsonObject.getString("semester");
+                                String mainMajor = jsonObject.getString("mainMajor");
+                                String _2ndMajorClass = jsonObject.getString("_2ndMajorClass");
+                                String _2ndMajor = jsonObject.getString("_2ndMajor");
+                                String thesis = jsonObject.getString("thesis");
+
+                                // 사용자 데이터 SharedPreference 저장
+                                SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "userID", userID);
+                                SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "password", password);
+                                SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "userName", userName);
+                                SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "toeic", toeic);
+                                SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "schoolYear", schoolYear);
+                                SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "semester", semester);
+                                SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "mainMajor", mainMajor);
+                                SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "_2ndMajorClass", _2ndMajorClass);
+                                SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "_2ndMajor", _2ndMajor);
+                                SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "thesis", thesis);
 
                                 Toast.makeText(getApplicationContext(),"로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(SignInActivity.this, HomeFragment.class);
+
+                                Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                                 intent.putExtra("userID", userID);
                                 intent.putExtra("password", password);
                                 startActivity(intent);

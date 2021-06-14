@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -30,10 +32,14 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.gradecalculator.MainActivity;
 import com.example.gradecalculator.MySingleton;
 import com.example.gradecalculator.R;
+import com.example.gradecalculator.SharedPreferenceUtil;
 import com.example.gradecalculator.graduation.GraduationFragment;
+import com.example.gradecalculator.home.HomeFragment;
+import com.example.gradecalculator.mypage.MyPageModifyFragment;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.nio.file.attribute.FileTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -52,6 +58,9 @@ public class ManageAddActivity extends AppCompatActivity {
     private TextView student_grade, semester;
     private String txt_sp_kind, txt_sp_kind_major, txt_sp_kind_domain, txt_sp_kind_credit, txt_sp_kind_grade, txt_sp_kind_retake;
     private ManagementFragment frag2;
+
+
+
     private FragmentManager fm;
     private FragmentTransaction ft;
     private Context context;
@@ -188,18 +197,13 @@ public class ManageAddActivity extends AppCompatActivity {
             }
         });
 
-
         frag2 = new ManagementFragment();
 
         btn_back = findViewById(R.id.btn_back);
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fm = getSupportFragmentManager();
-                ft = fm.beginTransaction();
-                ft.replace(R.id.main_frame, frag2, "back");
-                ft.addToBackStack("back");
-                ft.commit();
+                finish();
             }
         });
 
@@ -210,19 +214,10 @@ public class ManageAddActivity extends AppCompatActivity {
                 if(add_name.getText().toString().equals("")){
                     Toast.makeText(context, "과목명을 입력해주세요.", Toast.LENGTH_SHORT).show();
                 }else{
-                    register(context,"20181046",tabYear, tabSemester, add_name.getText().toString(),txt_sp_kind_credit, txt_sp_kind_major, txt_sp_kind, txt_sp_kind_domain, txt_sp_kind_grade, txt_sp_kind_retake);
+                    register(context, SharedPreferenceUtil.getSharedPreference(context, "userID"),tabYear, tabSemester, add_name.getText().toString(),txt_sp_kind_credit, txt_sp_kind_major, txt_sp_kind, txt_sp_kind_domain, txt_sp_kind_grade, txt_sp_kind_retake);
                 }
             }
         });
-    }
-  //  getSupportFragmentManager().beginTransaction().remove(movieInfo).commit();
-    // 프레그 먼트로 이동
-    public void replaceFragment(Fragment fragment){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.main_frame, fragment,"back");
-        fragmentTransaction.addToBackStack("back");
-        fragmentTransaction.commit();
     }
 
     public void register(Context context, String id, String year, String semester, String name, String credit, String kind_major, String kind, String kind_domain, String grade, String retake){

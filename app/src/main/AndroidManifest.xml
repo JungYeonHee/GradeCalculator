@@ -15,16 +15,15 @@
         <activity android:name=".sign_up.SignUpActivity">
 
         </activity>
-        <activity android:name=".sign_in.SignInActivity">
 
-        </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".sign_in.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".management.ManageAddActivity" />
     </application>
 

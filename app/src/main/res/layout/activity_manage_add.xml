@@ -28,7 +28,7 @@
                 android:layout_height="45dp"
                 android:text="1"
                 android:textColor="@color/black"
-                android:textSize="32dp"
+                android:textSize="28dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="123dp"/>
             <TextView
@@ -37,7 +37,7 @@
                 android:layout_height="45dp"
                 android:text="학년"
                 android:textColor="@color/black"
-                android:textSize="32dp"
+                android:textSize="28dp"
                 android:textStyle="bold"
                 android:layout_marginRight="10dp"/>
             <TextView
@@ -46,7 +46,7 @@
                 android:layout_height="45dp"
                 android:text="1"
                 android:textColor="@color/black"
-                android:textSize="32dp"
+                android:textSize="28dp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/txt_semester"
@@ -54,7 +54,7 @@
                 android:layout_height="45dp"
                 android:text="학기"
                 android:textColor="@color/black"
-                android:textSize="32dp"
+                android:textSize="28dp"
                 android:textStyle="bold"
                 android:layout_marginRight="123dp"/>
         </LinearLayout>
