@@ -76,10 +76,10 @@ public class SignUpActivity extends AppCompatActivity {
                 int userID = Integer.parseInt(et_id.getText().toString());
                 String userName = et_name.getText().toString();
                 String password = et_pass.getText().toString();
-                String entYear = et_entYear.getText().toString();
-                String toeic = et_toeic.getText().toString();
-                String schoolYear = sp_schoolYear.getSelectedItem().toString();
-                String semester = sp_semester.getSelectedItem().toString();
+                int entYear = Integer.parseInt(et_entYear.getText().toString());
+                int toeic = Integer.parseInt(et_toeic.getText().toString());
+                int schoolYear = Integer.parseInt(sp_schoolYear.getSelectedItem().toString());
+                int semester = Integer.parseInt(sp_semester.getSelectedItem().toString());
                 String mainMajor = sp_mainMajor.getSelectedItem().toString();
                 String _2ndMajorClass = sp_2ndMajorClass.getSelectedItem().toString();
                 String _2ndMajor = sp_2ndMajor.getSelectedItem().toString();
