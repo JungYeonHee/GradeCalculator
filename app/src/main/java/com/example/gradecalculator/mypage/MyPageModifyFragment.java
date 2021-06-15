@@ -80,16 +80,17 @@ public class MyPageModifyFragment extends Fragment {
         tv_user_id.setText(SharedPreferenceUtil.getSharedPreference(context, "userID"));
         tv_user_name.setText(SharedPreferenceUtil.getSharedPreference(context, "userName"));
 
-        // 기존 회원 정보 유지 --> input 값 바꾸기
-        sp_year.setSelection(getIndex(sp_year, "4"));
-        sp_semester.setSelection(getIndex(sp_semester, "1"));
-        sp_mainMajor.setSelection(getIndex(sp_mainMajor, "정보시스템공학과"));
-        sp_2ndMajorClass.setSelection(getIndex(sp_2ndMajorClass, "부전공"));
-        sp_2ndMajor.setSelection(getIndex(sp_2ndMajor, "컴퓨터공학과"));
-        sp_thesis.setSelection(getIndex(sp_thesis, "통과X"));
+        // spinner select된 목록으로 설정
+        sp_year.setSelection(getIndex(sp_year, SharedPreferenceUtil.getSharedPreference(context, "schoolYear")));
+        sp_semester.setSelection(getIndex(sp_semester, SharedPreferenceUtil.getSharedPreference(context, "semester")));
+        sp_mainMajor.setSelection(getIndex(sp_mainMajor, SharedPreferenceUtil.getSharedPreference(context, "mainMajor")));
+        sp_2ndMajorClass.setSelection(getIndex(sp_2ndMajorClass, SharedPreferenceUtil.getSharedPreference(context, "_2ndMajorClass")));
+        sp_2ndMajor.setSelection(getIndex(sp_2ndMajor, SharedPreferenceUtil.getSharedPreference(context, "_2ndMajor")));
+        sp_thesis.setSelection(getIndex(sp_thesis, SharedPreferenceUtil.getSharedPreference(context, "thesis")));
+        et_toeic.setText(SharedPreferenceUtil.getSharedPreference(context, "toeic"));
 
 
-        // nothing selected 일 때 기존 회원 정보로 바꾸기
+        // nothing selected 일 때 select된 목록으로 설정
         sp_year.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -98,7 +99,7 @@ public class MyPageModifyFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                schoolYear =  "4";
+                schoolYear =  SharedPreferenceUtil.getSharedPreference(context, "schoolYear");
             }
         });
 
@@ -110,7 +111,7 @@ public class MyPageModifyFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                semester =  "1";
+                semester =  SharedPreferenceUtil.getSharedPreference(context, "semester");
             }
         });
 
@@ -122,7 +123,7 @@ public class MyPageModifyFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                mainMajor =  "정보시스템공학과";
+                mainMajor =  SharedPreferenceUtil.getSharedPreference(context, "mainMajor");
             }
         });
 
@@ -134,7 +135,7 @@ public class MyPageModifyFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                _2ndMajorClass =  "부전공";
+                _2ndMajorClass =  SharedPreferenceUtil.getSharedPreference(context, "_2ndMajorClass");
             }
         });
 
@@ -146,7 +147,7 @@ public class MyPageModifyFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                _2ndMajor =  "컴퓨터공학과";
+                _2ndMajor =  SharedPreferenceUtil.getSharedPreference(context, "_2ndMajor");
             }
         });
 
@@ -158,7 +159,7 @@ public class MyPageModifyFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                thesis =  "통과X";
+                thesis =  SharedPreferenceUtil.getSharedPreference(context, "thesis");
             }
         });
 
