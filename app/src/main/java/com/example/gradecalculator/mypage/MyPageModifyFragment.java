@@ -41,6 +41,7 @@ public class MyPageModifyFragment extends Fragment {
     private Spinner sp_year, sp_semester, sp_mainMajor, sp_2ndMajorClass, sp_2ndMajor, sp_thesis;
     private Context context;
     private String schoolYear, semester, mainMajor, _2ndMajorClass, _2ndMajor, thesis;
+    private TextView tv_user_id, tv_user_name;
 
     public MyPageModifyFragment() {
         // Required empty public constructor
@@ -72,11 +73,16 @@ public class MyPageModifyFragment extends Fragment {
         sp_2ndMajor = view.findViewById(R.id.sp_second_major);
         sp_thesis = view.findViewById(R.id.sp_thesis);
         btn_update = view.findViewById(R.id.btn_update_mypage);
-        et_toeic = view.findViewById(R.id.ed_toeic);
+        et_toeic = view.findViewById(R.id.et_toeic);
+        tv_user_id = view.findViewById(R.id.tv_user_id);
+        tv_user_name = view.findViewById(R.id.tv_user_name);
+
+        tv_user_id.setText(SharedPreferenceUtil.getSharedPreference(context, "userID"));
+        tv_user_name.setText(SharedPreferenceUtil.getSharedPreference(context, "userName"));
 
         // 기존 회원 정보 유지 --> input 값 바꾸기
-        sp_year.setSelection(getIndex(sp_year, "4학년"));
-        sp_semester.setSelection(getIndex(sp_semester, "1학기"));
+        sp_year.setSelection(getIndex(sp_year, "4"));
+        sp_semester.setSelection(getIndex(sp_semester, "1"));
         sp_mainMajor.setSelection(getIndex(sp_mainMajor, "정보시스템공학과"));
         sp_2ndMajorClass.setSelection(getIndex(sp_2ndMajorClass, "부전공"));
         sp_2ndMajor.setSelection(getIndex(sp_2ndMajor, "컴퓨터공학과"));
@@ -92,7 +98,7 @@ public class MyPageModifyFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                schoolYear =  "4학년";
+                schoolYear =  "4";
             }
         });
 
@@ -104,7 +110,7 @@ public class MyPageModifyFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                semester =  "1학기";
+                semester =  "1";
             }
         });
 
@@ -173,10 +179,8 @@ public class MyPageModifyFragment extends Fragment {
 
     // 기존 회원 정보로 spinner 아이템 선택
     public int getIndex(Spinner spinner, String item){
-
         for (int i=0;i<spinner.getCount();i++){
             if (spinner.getItemAtPosition(i).toString().equals(item)){
-                Log.d("ddd", spinner.getItemAtPosition(i).toString());
                 return i;
             }
         }
