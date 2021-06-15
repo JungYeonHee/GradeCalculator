@@ -153,14 +153,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/schoolYear"
-                android:hint="1학년"></Spinner>
+                android:hint="1"></Spinner>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="학년">
+            </TextView>
 
             <Spinner
                 android:id="@+id/sp_semester"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/semester"
-                android:hint="1학기"></Spinner>
+                android:hint="1"></Spinner>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="학기">
+            </TextView>
 
         </LinearLayout>
 
@@ -279,7 +290,7 @@
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/ed_toeic"
+                android:id="@+id/et_toeic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"

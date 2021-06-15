@@ -23,6 +23,7 @@ public class MyPageFragment extends Fragment {
 
     private Button btn_logout, btn_edit;
     private Context context;
+    private TextView tv_user_id;
 
     public MyPageFragment() {
         // Required empty public constructor
@@ -48,6 +49,9 @@ public class MyPageFragment extends Fragment {
 
         btn_edit = view.findViewById(R.id.btn_edit); // 정보 수정
         btn_logout = view.findViewById(R.id.btn_logout); // 로그아웃
+        tv_user_id = view.findViewById(R.id.tv_user_id); // 학번
+
+        tv_user_id.setText(SharedPreferenceUtil.getSharedPreference(context, "userID"));
 
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
