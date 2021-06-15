@@ -83,7 +83,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="60dp"
             android:backgroundTint="@color/mainColor"
-            android:text="수정" />
+            android:text="내 정보 조회" />
 
         <Button
             android:id="@+id/btn_logout"
