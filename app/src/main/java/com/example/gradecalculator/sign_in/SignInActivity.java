@@ -58,14 +58,15 @@ public class SignInActivity extends AppCompatActivity {
                             boolean success = jsonObject.getBoolean("success");
                             if (success) { //로그인에 성공한 경우
                                 String userID = jsonObject.getString("userID");
-                                String password = jsonObject.getString("password");
                                 String userName = jsonObject.getString("userName");
-                                String toeic = jsonObject.getString("toeic");
-                                String schoolYear = jsonObject.getString("schoolYear");
-                                String semester = jsonObject.getString("semester");
+                                String password = jsonObject.getString("password");
                                 String mainMajor = jsonObject.getString("mainMajor");
+                                String entYear = jsonObject.getString("entYear");
                                 String _2ndMajorClass = jsonObject.getString("_2ndMajorClass");
                                 String _2ndMajor = jsonObject.getString("_2ndMajor");
+                                String schoolYear = jsonObject.getString("schoolYear");
+                                String semester = jsonObject.getString("semester");
+                                String toeic = jsonObject.getString("toeicScore");
                                 String thesis = jsonObject.getString("thesis");
 
                                 // 사용자 데이터 SharedPreference 저장
@@ -73,6 +74,7 @@ public class SignInActivity extends AppCompatActivity {
                                 SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "password", password);
                                 SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "userName", userName);
                                 SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "toeic", toeic);
+                                SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "entYear", entYear);
                                 SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "schoolYear", schoolYear);
                                 SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "semester", semester);
                                 SharedPreferenceUtil.setSharedPreference(SignInActivity.this, "mainMajor", mainMajor);

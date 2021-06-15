@@ -50,36 +50,27 @@ public class SignUpActivity extends AppCompatActivity {
         sp_2ndMajor = findViewById(R.id.sp_2ndMajor);
         sp_thesis = findViewById(R.id.sp_thesis);
 
-//        editText.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//                if(s.toString() != et_pass.toString())
-//                    inputLayout.setError("비밀번호가 일치하지 않습니다.");
-//                else inputLayout.setError(null); //null은 에러메시지를 지워주는 기능
-//            }
-//        });
-
         btn_signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //EditText에 현재 입력되어있는 값을 get(가져온다) 해온다.
-                int userID = Integer.parseInt(et_id.getText().toString());
+                //int userID = Integer.parseInt(et_id.getText().toString()); //int 형 타입
+                String userID = et_id.getText().toString();                  //String 형 타입
+
                 String userName = et_name.getText().toString();
                 String password = et_pass.getText().toString();
-                int entYear = Integer.parseInt(et_entYear.getText().toString());
-                int toeic = Integer.parseInt(et_toeic.getText().toString());
-                int schoolYear = Integer.parseInt(sp_schoolYear.getSelectedItem().toString());
-                int semester = Integer.parseInt(sp_semester.getSelectedItem().toString());
+                //int entYear = Integer.parseInt(et_entYear.getText().toString());
+                String entYear = et_entYear.getText().toString();
+
+                //int toeic = Integer.parseInt(et_toeic.getText().toString());
+                String toeic = et_toeic.getText().toString();
+
+                //int schoolYear = Integer.parseInt(sp_schoolYear.getSelectedItem().toString());
+                String schoolYear = sp_schoolYear.getSelectedItem().toString();
+
+                //int semester = Integer.parseInt(sp_semester.getSelectedItem().toString());
+                String semester = sp_semester.getSelectedItem().toString();
+
                 String mainMajor = sp_mainMajor.getSelectedItem().toString();
                 String _2ndMajorClass = sp_2ndMajorClass.getSelectedItem().toString();
                 String _2ndMajor = sp_2ndMajor.getSelectedItem().toString();
