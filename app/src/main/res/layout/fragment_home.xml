@@ -4,198 +4,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home.HomeFragment">
+    tools:context=".home.HomeFragment"
+    android:gravity ="center"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
     <!-- <TextView
          android:layout_width="match_parent"
          android:layout_height="match_parent"
          android:text="home" />-->
-
-    <TextView
-        android:id="@+id/gradeTitle"
-        android:layout_width="74dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="341dp"
-        android:layout_marginRight="341dp"
-        android:layout_marginBottom="15dp"
-        android:text="성적 관리"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/line1"
-        android:layout_width="380dp"
-        android:layout_height="3px"
-
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="8dp"
-        android:background="#6B6FAE"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpTitle"
-        app:layout_constraintVertical_bias="0.087" />
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:layout_marginTop="55dp"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+       android:layout_height="wrap_content"
+        android:fillViewport="false">
 
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/linechart"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:layout_marginTop="500dp" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:layout_marginTop="280dp"
-        android:orientation="vertical"
-        android:layout_marginBottom="100dp"
-        tools:context=".MainActivity">
+            android:orientation="vertical">
 
-        <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/pie_chart"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:layout_marginTop="500dp"/>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/gradeTitle"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginLeft="31dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="341dp"
+                android:layout_marginRight="341dp"
+                android:layout_marginBottom="15dp"
+                android:text="성적관리"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/goalCalculator"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="535dp"
-        android:layout_marginEnd="341dp"
-        android:layout_marginRight="341dp"
-        android:layout_marginBottom="15dp"
-        android:text="목표 평점 계산기"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <View
+                android:layout_width="380dp"
+                android:layout_height="3px"
+                android:layout_marginStart="15dp"
 
-    <TextView
-        android:id="@+id/current_goalGrade"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="570dp"
-        android:layout_marginEnd="341dp"
-        android:layout_marginRight="341dp"
-        android:layout_marginBottom="15dp"
-        android:text="현재 평점/ 목표 평점"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#6B6FAE" />
 
-    <TextView
-        android:id="@+id/needGrade"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="230dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="570dp"
-        android:layout_marginEnd="341dp"
-        android:layout_marginRight="341dp"
-        android:layout_marginBottom="15dp"
-        android:text="얻어야 하는 평점"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                tools:context=".MainActivity">
 
-    <View
-        android:id="@+id/line2"
-        android:layout_width="380dp"
-        android:layout_height="3px"
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/linechart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:layout_marginTop="500dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:orientation="vertical"
+                tools:context=".MainActivity">
 
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="590dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="8dp"
-        android:background="#6B6FAE"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpTitle"
-        app:layout_constraintVertical_bias="0.087" />
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/linechart2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:layout_marginTop="500dp" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/totalGrade"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="610dp"
-        android:layout_marginEnd="341dp"
-        android:layout_marginRight="341dp"
-        android:layout_marginBottom="15dp"
-        android:text="전체 평점"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginBottom="100dp"
+                android:orientation="vertical"
+                tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/majorGrade"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="640dp"
-        android:layout_marginEnd="341dp"
-        android:layout_marginRight="341dp"
-        android:layout_marginBottom="15dp"
-        android:text="전공 평점"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/needTotalGrade"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="230dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="610dp"
-        android:layout_marginEnd="341dp"
-        android:layout_marginRight="341dp"
-        android:layout_marginBottom="15dp"
-        android:text="전체 평점"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/needMajorGrade"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="230dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="640dp"
-        android:layout_marginEnd="341dp"
-        android:layout_marginRight="341dp"
-        android:layout_marginBottom="15dp"
-        android:text="전공 평점"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pie_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:layout_marginTop="500dp" />
+            </LinearLayout>
 
+            <View
+                android:id="@+id/line2"
+                android:layout_width="380dp"
+                android:layout_height="3px"
+
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="590dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="8dp"
+                android:background="#6B6FAE"
+                app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signUpTitle"
+                app:layout_constraintVertical_bias="0.087" />
+
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
+
