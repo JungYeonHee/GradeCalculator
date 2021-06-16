@@ -162,6 +162,8 @@ public class HomeFragment extends Fragment {
         XAxis xAxis = lineChart2.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setDrawGridLines(false);
+        xAxis.setLabelCount(8);
+
         YAxis yRAxis = lineChart2.getAxisRight();
         yRAxis.setDrawLabels(false);
         yRAxis.setDrawAxisLine(false);
