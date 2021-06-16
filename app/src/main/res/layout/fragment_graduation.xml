@@ -7,8 +7,716 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:text="졸업여부 조회"
+        android:textSize="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="graduation" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="0dp" />
+    <View
+        android:background="@color/mainColor"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp" />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="#B7B9DA" />
 
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="주전공"
+        android:textSize="18dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="부/복수/심화전공"
+        android:textSize="18dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="핵심 전공: "
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/myMainMajorCore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/mainMajorCore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="심화 전공: "
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/myMainMajorAdv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/mainMajorAdv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="부 전공: "
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/myMinMajor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/minMajor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="심화-핵심전공: "
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/myAdvMajorCore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/advMajorCore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="심화-심화전공: "
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/myAdvMajorAdv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/advMajorAdv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="복수-핵심전공: "
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/myDblMajorCore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/dblMajorCore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="복수-심화전공: "
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/myDblMajorAdv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/dblMajorAdv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="전공총점"
+        android:textSize="18dp"
+        android:layout_marginStart="315dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="315dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/myTotalMajor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/totalMajor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <!--교양-->
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="#B7B9DA" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="교양"
+        android:textSize="18dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공통교양: "
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/myCommonLiberal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/commonLiberal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="핵심교양: "
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/myCoreLiberal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/coreLiberal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="진로소양: "
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/myCareerLiberal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/careerLiberal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="일반교양: "
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/myGeneralLiberal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="교양총점"
+        android:textSize="18dp"
+        android:layout_marginStart="315dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="315dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/myTotalLiberal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/totalLiberal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="졸업 총점: "
+            android:textSize="18dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/myTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="my"
+            android:textSize="18dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="18dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:textSize="18dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="토익: "
+            android:textSize="18dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/myToeic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:textSize="18dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="18dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/toeic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:textSize="18dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="510dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="졸업 총점: "
+            android:textSize="18dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/myThesis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:textSize="18dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="18dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/thesis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n"
+            android:textSize="18dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
 </FrameLayout>

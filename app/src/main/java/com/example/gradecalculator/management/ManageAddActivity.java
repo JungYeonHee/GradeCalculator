@@ -48,8 +48,8 @@ public class ManageAddActivity extends AppCompatActivity {
     private EditText add_name;
     private Button btn_register;
     private String[] kinds = {"전공", "교양"};
-    private String[] kindMajors = {"-", "핵심", "복수", "부", "심화"};
-    private String[] kindDomains = {"-","1", "2", "3", "4"};
+    private String[] kindMajors = {"-", "핵심", "심화", "심화-핵심","심화-심화","복수-핵심", "복수-심화","부"};
+    private String[] kindDomains = {"-","공통", "핵심1", "핵심2", "핵심3", "핵심4","일반","진로"};
     private String[] credits = {"P", "NP", "1", "2", "3"};
     private String[] grades = {"A+", "A0", "A-", "B+", "B0", "B-", "C+", "C0", "C-", "D+", "D0", "D-", "F"};
     private String[] retakes = {"-", "1"};
