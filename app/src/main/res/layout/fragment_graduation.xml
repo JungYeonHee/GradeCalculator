@@ -607,7 +607,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="졸업 총점: "
+            android:text="졸업 총점 : "
             android:textSize="18dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1" />
@@ -649,7 +649,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="토익: "
+            android:text="토익 : "
             android:textSize="18dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1" />
@@ -691,7 +691,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="졸업 총점: "
+            android:text="졸업 논문 : "
             android:textSize="18dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1" />
