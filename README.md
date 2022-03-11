@@ -28,7 +28,7 @@
 
 * 화면
 
-    <img src = "https://user-images.githubusercontent.com/55652102/157783227-b17b0e2e-6a6a-403b-8f51-d228f2ad907e.png" width="50%" height="50%">
+    <img src = "https://user-images.githubusercontent.com/55652102/157783227-b17b0e2e-6a6a-403b-8f51-d228f2ad907e.png" width="30%" height="30%">
 
     1. 학번 및 비밀번호 입력
     2. 로그인 버튼
@@ -47,7 +47,7 @@
 ### 🔐 회원가입
 * 화면
 
-    <img src = "https://user-images.githubusercontent.com/55652102/157783585-1545cabe-6486-4ff9-a339-328714ff5535.png" width="50%" height="50%">
+    <img src = "https://user-images.githubusercontent.com/55652102/157783585-1545cabe-6486-4ff9-a339-328714ff5535.png" width="30%" height="30%">
     
     1. 회원 정보 입력
         * **항목** : 학번, 이름, 비밀번호, 입학 연도, 학적(n학년 n학기), 복부전 여부, 주전공, 선택 전공, 토익점수, 졸업논문 통과 여부
@@ -64,7 +64,7 @@
 ### 📈 성적 비율 그래프 구현
 * 화면
 
-    <img src = "https://user-images.githubusercontent.com/55652102/157784028-5c12ce86-275a-48c3-b4de-0aff7a8d973c.png" width="50%" height="50%">
+    <img src = "https://user-images.githubusercontent.com/55652102/157784028-5c12ce86-275a-48c3-b4de-0aff7a8d973c.png" width="30%" height="30%">
     
     1. 학년 및 학기 별 성적 그래프
         * 입력하지 않은 학기의 평균 학점 값은 0으로 나타납니다.
@@ -84,7 +84,7 @@
 ### 📄 성적 조회
 * 화면
 
-    <img src = "https://user-images.githubusercontent.com/55652102/157784434-258e4c3b-baf4-47f4-a493-c374c785c887.png" width="50%" height="50%">
+    <img src = "https://user-images.githubusercontent.com/55652102/157784434-258e4c3b-baf4-47f4-a493-c374c785c887.png" width="30%" height="30%">
     
     1. 학년 및 학기 별 성적 조회
     2. 평균 자동 계산
@@ -102,7 +102,7 @@
 ### ✏️ 성적 등록
 * 화면
 
-    <img src = "https://user-images.githubusercontent.com/55652102/157784603-0ae619b6-8ae2-4200-b406-f130925b6ad4.png" width="50%" height="50%">
+    <img src = "https://user-images.githubusercontent.com/55652102/157784603-0ae619b6-8ae2-4200-b406-f130925b6ad4.png" width="30%" height="30%">
     
     1. 성적 등록
         * 학년 및 학기 별 성적을 전공/선택전공/교양으로 나눠서 입력할 수 있습니다.
@@ -121,7 +121,7 @@
 ### 👩‍ 졸업 여부 조회
 * 화면
 
-    <img src = "https://user-images.githubusercontent.com/55652102/157784912-33c0ee5f-4702-492a-99ff-5716e951e56c.png" width="50%" height="50%">
+    <img src = "https://user-images.githubusercontent.com/55652102/157784912-33c0ee5f-4702-492a-99ff-5716e951e56c.png" width="30%" height="30%">
     
     1. 수강 과목 정보와 학생의 입학 연도, 주전공 정보, 선택 전공 여부를 활용하여 졸업 요건을 얼마나 충족했는지 여부를 한눈에 확인할 수 있습니다.
         * 학생이 이수한 학점 / 필수 이수 학점
@@ -139,7 +139,7 @@
 
 * 화면
 
-    <img src = "https://user-images.githubusercontent.com/55652102/157785198-ad22a97e-1dee-470f-a6f5-d2f468ac33f3.png" width="50%" height="50%">
+    <img src = "https://user-images.githubusercontent.com/55652102/157785198-ad22a97e-1dee-470f-a6f5-d2f468ac33f3.png" width="30%" height="30%">
     
     1. 사용자 정보 조회
         * 로그인 한 사용자의 ID를 조회할 수 있습니다.
@@ -153,7 +153,7 @@
 > 마이페이지 (2)
 * 화면
 
-    <img src = "https://user-images.githubusercontent.com/55652102/157785511-6cfd04b9-8029-4d93-bce3-e7240246c141.png" width="50%" height="50%">
+    <img src = "https://user-images.githubusercontent.com/55652102/157785511-6cfd04b9-8029-4d93-bce3-e7240246c141.png" width="30%" height="30%">
 
     1. 마이페이지 정보 조회
         * 로그인 한 사용자의 정보를 조회할 수 있습니다.
@@ -166,7 +166,7 @@
 > 마이페이지 (3)
 * 화면
 
-    <img src = "https://user-images.githubusercontent.com/55652102/157785675-a187fd58-56d8-492b-a2ed-a098e10a9845.png" width="50%" height="50%">
+    <img src = "https://user-images.githubusercontent.com/55652102/157785675-a187fd58-56d8-492b-a2ed-a098e10a9845.png" width="30%" height="30%">
     
     1. 마이페이지 수정
         * 로그인 한 사용자의 정보를 수정할 수 있습니다.
@@ -180,7 +180,7 @@
 
 * 화면
 
-    <img src = "https://user-images.githubusercontent.com/55652102/157785909-a4745363-b6ae-48d2-afc4-649abb68c4ee.png" width="50%" height="50%">
+    <img src = "https://user-images.githubusercontent.com/55652102/157785909-a4745363-b6ae-48d2-afc4-649abb68c4ee.png" width="30%" height="30%">
     
     1.  로그아웃 확인
         * 로그아웃을 진행한 뒤, 로그인 창으로 이동합니다.
